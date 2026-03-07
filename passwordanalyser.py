@@ -22,4 +22,4 @@ def numbers(self):
 
 def specialCharacters(self):
     return bool(re.search(r"!?<>@&%:"), self.password)
-
+  
