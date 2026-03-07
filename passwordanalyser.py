@@ -21,5 +21,6 @@ def numbers(self):
     return bool(re.search(r"/d"), self.password))
 
 def specialCharacters(self):
-    return bool(re.search(r"!?<>@&%:"), self.password)
-  
+    return bool(re.search(r"[!-\/:-@[-`{-~]"), self.password)
+    #How to regex ALL special characters.. 
+    #https://stackoverflow.com/questions/18057962/regex-pattern-including-all-special-characters
