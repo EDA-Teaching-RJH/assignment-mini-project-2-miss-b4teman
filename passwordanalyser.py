@@ -24,3 +24,43 @@ def specialCharacters(self):
     return bool(re.search(r"[!-\/:-@[-`{-~]"), self.password)
     #How to regex ALL special characters.. 
     #https://stackoverflow.com/questions/18057962/regex-pattern-including-all-special-characters
+    #look intocompiling regex
+
+#scoring passwords + giving rating
+def score(self)
+    score = o
+ 
+    if self.length() >= 8:
+        score += 1
+    
+    if self.uppercase():
+        score += 1
+
+    if self.lowercase():
+        score += 1
+
+    if self.numbers():
+        score += 1
+
+    if self.specialCharacters():
+        score += 1
+
+    return score
+
+def rating(self):
+    rate = self.score()
+
+    if rate <= 2:
+        return "Weak Password"
+    
+    elif rate == 3:
+        return "Medium Password"
+
+    elif rate <= 4:
+        return "Strong Password"
+
+    elif rate < 4:
+        return "Very Strong Password"
+
+    else:
+        return "ERROR"
