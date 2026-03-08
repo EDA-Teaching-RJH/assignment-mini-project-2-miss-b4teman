@@ -64,3 +64,22 @@ def rating(self):
 
     else:
         return "ERROR"
+
+#Suggestions for password
+def suggestions(self):
+    
+    tips = []
+    
+    if not self.uppercase():
+        tips.append("Add uppercase letters")
+
+    if not self.numbers():
+        tips.append("Add numbers")
+
+    if not self.specialCharacters():
+        tips.append("Add special characters")
+
+    if not self.length() < 12:
+        tips.append("Add more characters/Make password longer")
+
+    return "".join(tips)
