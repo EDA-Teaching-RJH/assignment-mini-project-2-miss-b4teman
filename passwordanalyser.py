@@ -1,5 +1,7 @@
 #ANalysing the passwords
 
+import re
+
 #Class for analysing password length
 class PasswordAnalyser:
     def __init__(self, password):
@@ -8,8 +10,7 @@ class PasswordAnalyser:
 def length(self):
     return len(self.password)
 
-#Regular expression: importing the library and checking the passwords for different features
-import re
+#Regular expression: importing the library (do that at the top) and checking the passwords for different features
 
 def uppercase(self):
     return bool(re.search(r"[A-Z]", self.password))
@@ -27,8 +28,8 @@ def specialCharacters(self):
     #look intocompiling regex
 
 #scoring passwords + giving rating
-def score(self)
-    score = o
+def score(self):
+    score = 0
  
     if self.length() >= 8:
         score += 1
@@ -59,7 +60,7 @@ def rating(self):
     elif rate <= 4:
         return "Strong Password"
 
-    elif rate < 4:
+    elif rate == 5:
         return "Very Strong Password"
 
     else:
@@ -79,7 +80,7 @@ def suggestions(self):
     if not self.specialCharacters():
         tips.append("Add special characters")
 
-    if not self.length() < 12:
+    if self.length() < 12:
         tips.append("Add more characters/Make password longer")
 
-    return "".join(tips)
+    return ", ".join(tips)
