@@ -21,6 +21,7 @@ def writeResults(filePath, results):
             "Rating",
             "Stars",
             "Guess time",
+            "Entropy",
             "Suggestions"
         ])
 

@@ -3,6 +3,7 @@
 import re
 import random
 import string
+import math
 
 #Class for analysing password length
 class Password:
@@ -112,20 +113,12 @@ class PasswordAnalyser(Password):
         return ", ".join(tips)
 
     def guessTime(self):
-        score = self.score()
+        entropy = self.entropy()
+        guesses = 2 ** entropy()
+        guessesPerSecond = 100000000000 #Actual number computers can do
+        seconds = guesses / guessesPerSecond
 
-        if score <= 2:
-            return "Instantly"
-  
-        elif score == 3:
-            return "A few minutes"
-    
-        elif score == 4:
-            return "A few hours"
-    
-        else:
-            return "Years"
-    #Change this
+        return round(seconds, 2)
     
     #for reflection MD this was definitely the hardest part
 
@@ -136,3 +129,27 @@ class PasswordAnalyser(Password):
         missing = "☆" * (5 - score)
 
         return givenStars + missing
+
+    def entropy(self):
+
+        pool = 0
+
+        if self.lowercase():
+            pool += 26
+
+        if self.uppercase():
+            pool += 26
+
+        if self.numbers():
+            pool += 10
+
+        if self.specialCharacters():
+            pool += 32
+
+        if pool == 0:
+            return 0
+
+        entropy = self.length() * math.log2(pool)
+        return round(entropy, 2)
+
+    #26 is because there are 26 letters A-Z, 10 is because there are 10 digits, and 32 is because there are 32 special characters

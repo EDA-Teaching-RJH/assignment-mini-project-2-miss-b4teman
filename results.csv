@@ -1,4 +1,4 @@
-Password,Score,Rating,Guess time,Suggestions
+Password,Score,Rating,Stars,Guess time,Suggestions
 hello,0,Weak Password,☆☆☆☆☆,Instantly,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer, Common Password"
 johndoe1234,3,Medium Password,★★★☆☆,A few minutes,"Add uppercase letters, Add special characters, Add more characters/Make password longer"
 123456,0,Weak Password,☆☆☆☆☆,Instantly,"Add uppercase letters, Add special characters, Add more characters/Make password longer, Common Password"
