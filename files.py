@@ -16,12 +16,12 @@ def writeResults(filePath, results):
         writer = csv.writer(file)
 
         writer.writerow([
-            "Password ",
-            "Score ",
-            "Rating ",
-            "Stars ",
-            "Guess time (Years) ",
-            "Entropy ",
+            "Password",
+            "Score",
+            "Rating",
+            "Stars",
+            "Guess time (Years)",
+            "Entropy",
             "Suggestions "
         ])
 
