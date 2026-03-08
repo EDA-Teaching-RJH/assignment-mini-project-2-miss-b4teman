@@ -2,7 +2,7 @@
 import csv
 
 def readPasswords(filePath):
-    with open(filePath):
+    with open(filePath) as file:
         passwords = [line.strip() for line in file]
 
     return passwords
@@ -16,10 +16,10 @@ def writeResults(filePath, results):
         writer = csv.writer(file)
 
         writer.writerow([
-            "Password"
-            "Score"
-            "Rating"
-            "Guess time"
+            "Password",
+            "Score",
+            "Rating",
+            "Guess time",
             "Suggestions"
         ])
 

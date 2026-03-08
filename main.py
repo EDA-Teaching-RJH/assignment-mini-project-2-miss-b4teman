@@ -1,24 +1,14 @@
 #main program
 
 #Importing and reading passwords
-from files import readPasswords
-passwords = readPasswords("Passwords.txt")
-
-for p in passwords:
-    print(p)
-
-analyser = passwordAnalyser(p)
-print(analyser.length())
-
 from files import readPasswords, writeResults
 from passwordanalyser import PasswordAnalyser
 
-password = readPassword("Passwords.txt")
+passwords = readPasswords("Passwords.txt")
 
 results = []
 
 for p in passwords:
-
     analyser = PasswordAnalyser(p)
 
     results.append([
