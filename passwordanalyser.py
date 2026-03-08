@@ -32,6 +32,9 @@ class PasswordAnalyser(Password):
         #https://stackoverflow.com/questions/18057962/regex-pattern-including-all-special-characters
         #look intocompiling regex
 
+    def repeatedCharacters(self):
+        return bool(re.search(r"(.)/1{2,}",self.password))
+        
 #scoring passwords + giving rating
     def score(self):
         score = 0
@@ -50,6 +53,9 @@ class PasswordAnalyser(Password):
 
         if self.specialCharacters():
             score += 1
+
+        if self.repeatedCharacters():
+            score -= 1
 
         return score
 
