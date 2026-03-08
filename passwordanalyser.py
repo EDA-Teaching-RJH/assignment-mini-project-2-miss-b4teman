@@ -65,7 +65,7 @@ def rating(self):
     else:
         return "ERROR"
 
-#Suggestions for password
+#Suggestions for password, tips is empty, but if it doesnt fit a criteria it will add the related suggestion
 def suggestions(self):
     
     tips = []

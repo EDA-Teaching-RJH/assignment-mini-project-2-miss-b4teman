@@ -7,3 +7,4 @@ def readPasswords(filePath):
 
     return passwords
 
+def writeResults(filePath, results):
