@@ -1,18 +1,18 @@
-Password,Score,Rating,Stars,Guess time,Suggestions
-hello,0,Weak Password,☆☆☆☆☆,Instantly,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer, Common Password"
-johndoe1234,3,Medium Password,★★★☆☆,A few minutes,"Add uppercase letters, Add special characters, Add more characters/Make password longer"
-123456,0,Weak Password,☆☆☆☆☆,Instantly,"Add uppercase letters, Add special characters, Add more characters/Make password longer, Common Password"
-iloveyou,0,Weak Password,☆☆☆☆☆,Instantly,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer, Common Password"
-qwerty,0,Weak Password,☆☆☆☆☆,Instantly,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer, Common Password"
-password,0,Weak Password,☆☆☆☆☆,Instantly,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer, Common Password"
-Notsecure257,4,Strong Password,★★★★☆,A few hours,Add special characters
-LiveLongAndProsper,3,Medium Password,★★★☆☆,A few minutes,"Add numbers, Add special characters"
-KittyCat6,4,Strong Password,★★★★☆,A few hours,"Add special characters, Add more characters/Make password longer"
-Miami13,3,Medium Password,★★★☆☆,A few minutes,"Add special characters, Add more characters/Make password longer"
-Password67,4,Strong Password,★★★★☆,A few hours,"Add special characters, Add more characters/Make password longer"
-Hi1212,3,Medium Password,★★★☆☆,A few minutes,"Add special characters, Add more characters/Make password longer"
-SecurePass2026!!,5,Very Strong Password,★★★★★,Years,
-VeryGoodPa$$19,5,Very Strong Password,★★★★★,Years,
-Good@Password31,5,Very Strong Password,★★★★★,Years,
-Fundam3ntal$0fProgramm!ng,5,Very Strong Password,★★★★★,Years,
-Sparkle?J5mp?R0peQu33n,5,Very Strong Password,★★★★★,Years,
+Password,Score,Rating,Stars,Guess time (Years),Entropy,Suggestions
+hello,0,Weak Password,☆☆☆☆☆,0.0,23.5,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer, Common Password"
+johndoe1234,3,Medium Password,★★★☆☆,0.04,56.87,"Add uppercase letters, Add special characters, Add more characters/Make password longer"
+123456,0,Weak Password,☆☆☆☆☆,0.0,19.93,"Add uppercase letters, Add special characters, Add more characters/Make password longer, Common Password"
+iloveyou,0,Weak Password,☆☆☆☆☆,0.0,37.6,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer, Common Password"
+qwerty,0,Weak Password,☆☆☆☆☆,0.0,28.2,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer, Common Password"
+password,0,Weak Password,☆☆☆☆☆,0.0,37.6,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer, Common Password"
+Notsecure257,4,Strong Password,★★★★☆,1022.79,71.45,Add special characters
+LiveLongAndProsper,3,Medium Password,★★★☆☆,2454037801043.52,102.61,"Add numbers, Add special characters"
+KittyCat6,4,Strong Password,★★★★☆,0.0,53.59,"Add special characters, Add more characters/Make password longer"
+Miami13,3,Medium Password,★★★☆☆,0.0,41.68,"Add special characters, Add more characters/Make password longer"
+Password67,4,Strong Password,★★★★☆,0.27,59.54,"Add special characters, Add more characters/Make password longer"
+Hi1212,3,Medium Password,★★★☆☆,0.0,35.73,"Add special characters, Add more characters/Make password longer"
+SecurePass2026!!,5,Very Strong Password,★★★★★,11754632028317.97,104.87,
+VeryGoodPa$$19,5,Very Strong Password,★★★★★,1329553431.32,91.76,
+Good@Password31,5,Very Strong Password,★★★★★,125447660578.26,98.32,
+Fundam3ntal$0fProgramm!ng,5,Very Strong Password,★★★★★,6.729278190792496e+30,163.86,
+Sparkle?J5mp?R0peQu33n,5,Very Strong Password,★★★★★,8.123043291717387e+24,144.2,

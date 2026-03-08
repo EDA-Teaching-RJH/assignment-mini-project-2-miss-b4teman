@@ -114,11 +114,12 @@ class PasswordAnalyser(Password):
 
     def guessTime(self):
         entropy = self.entropy()
-        guesses = 2 ** entropy()
+        guesses = 2 ** entropy
         guessesPerSecond = 100000000000 #Actual number computers can do
         seconds = guesses / guessesPerSecond
+        years = seconds / (60 * 60 * 24 * 365)
 
-        return round(seconds, 2)
+        return round(years, 2)
     
     #for reflection MD this was definitely the hardest part
 
