@@ -23,9 +23,9 @@ for p in passwords:
 
     results.append([
         p,
-        analyser.score()
-        analyser.rating()
-        analyser.guessTime()
+        analyser.score(),
+        analyser.rating(),
+        analyser.guessTime(),
         analyser.suggestions()
     ])
 
