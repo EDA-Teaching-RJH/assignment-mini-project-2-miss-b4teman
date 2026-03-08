@@ -12,16 +12,16 @@ def length(self):
 import re
 
 def uppercase(self):
-    return bool(re.search(r"[A-Z]"), self.password))
+    return bool(re.search(r"[A-Z]", self.password))
 
 def lowercase(self):
-    return bool(re.search(r"[a-z]"), self.password)
+    return bool(re.search(r"[a-z]", self.password))
 
 def numbers(self):
-    return bool(re.search(r"/d"), self.password))
+    return bool(re.search(r"\d", self.password))
 
 def specialCharacters(self):
-    return bool(re.search(r"[!-\/:-@[-`{-~]"), self.password)
+    return bool(re.search(r"[!-/:-@[-`{-~]", self.password))
     #How to regex ALL special characters.. 
     #https://stackoverflow.com/questions/18057962/regex-pattern-including-all-special-characters
     #look intocompiling regex
