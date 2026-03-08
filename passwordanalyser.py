@@ -1,14 +1,19 @@
 #ANalysing the passwords
 
 import re
+import random
+import string
 
 #Class for analysing password length
-class PasswordAnalyser:
+class Password:
     def __init__(self, password):
         self.password = password
 
     def length(self):
         return len(self.password)
+
+#Adding inheritance: inherting from password
+class PasswordAnalyser(Password):
 
 #Regular expression: importing the library (do that at the top) and checking the passwords for different features
 
