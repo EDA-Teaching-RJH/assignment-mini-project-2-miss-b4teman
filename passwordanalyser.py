@@ -34,7 +34,13 @@ class PasswordAnalyser(Password):
 
     def repeatedCharacters(self):
         return bool(re.search(r"(.)/1{2,}",self.password))
+
+    def commonPassword(self):
+        with open("commonpasswords.txt") as f:
+            common = f.read().splitlines()
         
+        return self.password.lower() in common
+
 #scoring passwords + giving rating
     def score(self):
         score = 0
@@ -56,6 +62,9 @@ class PasswordAnalyser(Password):
 
         if self.repeatedCharacters():
             score -= 1
+
+        if self.commonPassword():
+            score = 0
 
         return score
 
