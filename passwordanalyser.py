@@ -84,3 +84,21 @@ class PasswordAnalyser:
             tips.append("Add more characters/Make password longer")
 
         return ", ".join(tips)
+
+    def guessTime(self):
+        score = self.score()
+
+        if score <= 2:
+            return "Instantly"
+  
+        elif score == 3:
+            return "A few minutes"
+    
+        elif score == 4:
+            return "A few hours"
+    
+        else:
+            return "Years"
+    #Change this
+    
+    #for reflection MD this was definitely the hardest part

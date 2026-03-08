@@ -1,0 +1,18 @@
+ Password,Score,Rating,Guess time,Suggestions
+hello,1,Weak Password,Instantly,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer"
+johndoe1234,3,Medium Password,A few minutes,"Add uppercase letters, Add special characters, Add more characters/Make password longer"
+123456,1,Weak Password,Instantly,"Add uppercase letters, Add special characters, Add more characters/Make password longer"
+iloveyou,2,Weak Password,Instantly,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer"
+qwerty,1,Weak Password,Instantly,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer"
+,0,Weak Password,Instantly,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer"
+Notsecure257,4,Strong Password,A few hours,Add special characters
+LiveLongAndProsper,3,Medium Password,A few minutes,"Add numbers, Add special characters"
+KittyCat6,4,Strong Password,A few hours,"Add special characters, Add more characters/Make password longer"
+Miami13,3,Medium Password,A few minutes,"Add special characters, Add more characters/Make password longer"
+Password67,4,Strong Password,A few hours,"Add special characters, Add more characters/Make password longer"
+,0,Weak Password,Instantly,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer"
+SecurePass2026!!,5,Very Strong Password,Years,
+VeryGoodPa$$19,5,Very Strong Password,Years,
+Good@Password31,5,Very Strong Password,Years,
+Fundam3ntal$0fProgramm!ng,5,Very Strong Password,Years,
+Sparkle?J5mp?R0peQu33n,5,Very Strong Password,Years,
