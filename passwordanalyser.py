@@ -103,6 +103,12 @@ class PasswordAnalyser(Password):
         if self.length() < 12:
             tips.append("Add more characters/Make password longer")
 
+        if self.commonPassword():
+            tips.append("Common Password")
+
+        if self.repeatedCharacters():
+            tips.append("Remove repeated characters")
+
         return ", ".join(tips)
 
     def guessTime(self):
