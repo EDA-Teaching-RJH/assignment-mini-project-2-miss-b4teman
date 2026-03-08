@@ -28,13 +28,10 @@ class PasswordAnalyser(Password):
         return bool(re.search(r"\d", self.password))
 
     def specialCharacters(self):
-        return bool(re.search(r"[!-/:-@[-`{-~]", self.password))
-        #How to regex ALL special characters.. 
-        #https://stackoverflow.com/questions/18057962/regex-pattern-including-all-special-characters
-        #look intocompiling regex
+        return bool(re.search(r"[^\w\s]", self.password))
 
     def repeatedCharacters(self):
-        return bool(re.search(r"(.)/1{2,}",self.password))
+        return bool(re.search(r"(.)\1{2,}",self.password))
 
     def commonPassword(self):
         with open("commonpasswords.txt") as f:

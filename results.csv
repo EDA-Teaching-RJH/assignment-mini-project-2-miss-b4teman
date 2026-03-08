@@ -1,4 +1,4 @@
-Password ,Score ,Rating ,Stars ,Guess time (Years) ,Entropy ,Suggestions 
+Password,Score,Rating,Stars,Guess time (Years),Entropy,Suggestions
 hello,0,Weak Password,☆☆☆☆☆,0.0,23.5,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer, Common Password"
 johndoe1234,3,Medium Password,★★★☆☆,0.04,56.87,"Add uppercase letters, Add special characters, Add more characters/Make password longer"
 123456,0,Weak Password,☆☆☆☆☆,0.0,19.93,"Add uppercase letters, Add special characters, Add more characters/Make password longer, Common Password"

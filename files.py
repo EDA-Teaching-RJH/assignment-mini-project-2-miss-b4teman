@@ -22,7 +22,7 @@ def writeResults(filePath, results):
             "Stars",
             "Guess time (Years)",
             "Entropy",
-            "Suggestions "
+            "Suggestions"
         ])
 
         for r in results:
