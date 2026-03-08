@@ -128,3 +128,11 @@ class PasswordAnalyser(Password):
     #Change this
     
     #for reflection MD this was definitely the hardest part
+
+    def stars(self):
+        score = self.score()
+
+        givenStars = "★" * score
+        missing = "☆" * (5 - score)
+
+        return givenStars + missing

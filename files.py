@@ -19,6 +19,7 @@ def writeResults(filePath, results):
             "Password",
             "Score",
             "Rating",
+            "Stars",
             "Guess time",
             "Suggestions"
         ])

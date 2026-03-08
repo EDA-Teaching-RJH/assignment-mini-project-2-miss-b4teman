@@ -15,6 +15,7 @@ for p in passwords:
         p,
         analyser.score(),
         analyser.rating(),
+        analyser.stars(),
         analyser.guessTime(),
         analyser.suggestions()
     ])
