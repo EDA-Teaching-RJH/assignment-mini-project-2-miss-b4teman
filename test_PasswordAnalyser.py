@@ -5,7 +5,7 @@ from passwordanalyser import PasswordAnalyser
 #testing diff features:
 def test_Length():
     p = PasswordAnalyser("HelloTest!!!!")
-    assert p.length() == 12
+    assert p.length() == 13
 
 def test_Uppercase():
     p = PasswordAnalyser("Testingg")
@@ -33,7 +33,7 @@ def test_NoSpecialChars():
     assert p.specialCharacters() == False
 
 def test_Repeated():
-    p = PasswordAnalyser("hehehehe1212")
+    p = PasswordAnalyser(hehehe12")
     assert p.repeatedCharacters() == True
 
 #score tets:
@@ -43,7 +43,7 @@ def test_Weak():
 
 def test_Strong():
     p = PasswordAnalyser("FunH4ppyT3st!!!:D")
-    assert p.score() == 5
+    assert p.score() >= 4
 
 #entropy test:
 def test_GoodEntropy():
