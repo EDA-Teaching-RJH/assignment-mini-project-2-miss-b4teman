@@ -33,7 +33,7 @@ def test_NoSpecialChars():
     assert p.specialCharacters() == False
 
 def test_Repeated():
-    p = PasswordAnalyser(hehehe12")
+    p = PasswordAnalyser("hhh111222")
     assert p.repeatedCharacters() == True
 
 #score tets:
