@@ -3,6 +3,7 @@ hello,0,Weak Password,☆☆☆☆☆,0.0,23.5,"Add uppercase letters, Add numbe
 johndoe1234,3,Medium Password,★★★☆☆,0.04,56.87,"Add uppercase letters, Add special characters, Add more characters/Make password longer"
 123456,0,Weak Password,☆☆☆☆☆,0.0,19.93,"Add uppercase letters, Add special characters, Add more characters/Make password longer, Common Password"
 iloveyou,0,Weak Password,☆☆☆☆☆,0.0,37.6,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer, Common Password"
+,0,Weak Password,☆☆☆☆☆,0.0,0,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer"
 qwerty,0,Weak Password,☆☆☆☆☆,0.0,28.2,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer, Common Password"
 password,0,Weak Password,☆☆☆☆☆,0.0,37.6,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer, Common Password"
 Notsecure257,4,Strong Password,★★★★☆,1022.79,71.45,Add special characters
