@@ -22,3 +22,26 @@ def testNumbers():
 def testSpecial():
     p = PasswordAnalyser("Test:P")
     assert p.specialCharacters() == True
+
+#regex edge cases:
+def testNoNumber():
+    p = PasswordAnalyser("Test")
+    assert p.numbers() == False
+
+def testNoSpecialChars():
+    p = PasswordAnalyser("TestPassword1245")
+    assert p.specialCharacters() == False
+
+def testRepeated():
+    p = PasswordAnalyser("hehehehe1212")
+    assert p.repeatedCharacters() == True
+
+#score tets:
+def testWeak():
+    p = PasswordAnalyser("password")
+    assert p.score() == 0
+
+def testStrong():
+    p = PasswordAnalyser("FunH4ppyT3st!!!:D")
+    assert p.score() == 5
+
