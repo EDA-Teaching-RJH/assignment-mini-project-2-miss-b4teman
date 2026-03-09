@@ -46,7 +46,7 @@ def testStrong():
     assert p.score() == 5
 
 #entropy test:
-def goodEntropy():
+def testGoodEntropy():
     p = PasswordAnalyser("Test?@12LOLc4t")
     assert p.entropy() > 0
 
