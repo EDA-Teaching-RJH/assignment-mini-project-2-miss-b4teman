@@ -50,12 +50,12 @@ def goodEntropy():
     p = PasswordAnalyser("Test?@12LOLc4t")
     assert p.entropy() > 0
 
-def testEmpty()
+def testEmpty():
     p = PasswordAnalyser("")
     assert p.entropy() == 0
 
 #Testing the code:
-def testCode
+def testCode():
     try:
         p = PasswordAnalyser("")
         p.score()
