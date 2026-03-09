@@ -45,3 +45,22 @@ def testStrong():
     p = PasswordAnalyser("FunH4ppyT3st!!!:D")
     assert p.score() == 5
 
+#entropy test:
+def goodEntropy():
+    p = PasswordAnalyser("Test?@12LOLc4t")
+    assert p.entropy() > 0
+
+def testEmpty()
+    p = PasswordAnalyser("")
+    assert p.entropy() == 0
+
+#Testing the code:
+def testCode
+    try:
+        p = PasswordAnalyser("")
+        p.score()
+        p.entropy()
+        p.rating()
+
+    except Exception:
+        pytest.fail("ERROR: Empty password")
