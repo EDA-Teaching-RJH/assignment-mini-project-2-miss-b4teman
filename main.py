@@ -39,3 +39,4 @@ print(f"Stars: {p.stars()}")
 print(f"Guess time (years): {p.guessTime()}")
 print(f"Entropy: {p.entropy()}")
 print(f"Suggestions: {p.suggestions()}")
+
