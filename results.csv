@@ -1,4 +1,4 @@
-Password,Score,Rating,Stars,Guess time (Years),Entropy score (Bits),SuggestionsBreach count
+Password,Score,Rating,Stars,Guess time (Years),Entropy score (Bits),Suggestions,Breach count
 hello,0,Compromised,☆☆☆☆☆,0.0,23.5,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer, Common Password",1187309
 johndoe1234,0,Compromised,☆☆☆☆☆,0.04,56.87,"Add uppercase letters, Add special characters, Add more characters/Make password longer",637
 letmein,0,Compromised,☆☆☆☆☆,0.0,32.9,"Add uppercase letters, Add numbers, Add special characters, Add more characters/Make password longer, Common Password",1406394

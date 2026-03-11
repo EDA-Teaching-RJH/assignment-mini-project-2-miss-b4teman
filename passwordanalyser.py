@@ -198,7 +198,7 @@ def plotEntropyDistro(passwords):
 
     plt.figure(figsize=(8,5))
 
-    plt.hist(entropies, bins = 10, color = "#f45cff", edgecolor = "#11004a")
+    plt.hist(entropies, bins = 10, color = "#ff94fa", edgecolor = "#11004a")
     
     plt.title("Entropy Score Distribution")
     plt.xlabel("Entropy Score")
