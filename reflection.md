@@ -27,6 +27,6 @@ I firstly created a draft to understand the layout of my code. The crucial part 
 'main.py' connects all of my program together, it reads the passwords, creates a 'PasswordAnalyser' object for each password, stores that in a list and writes the results to the 'results.csv'. I also added a feature which allows a user to check their own password directly in the terminal. 
 I also had to import modules to be able to perform the functions I wanted in my code, for example math. I also imported my own custom libraries, as shown in main.py. 
 'test_PasswordAnalyser' is used to check test that my code works, as well as testing edge cases, for my tests, I used an empty password, the entropy, different scores and for different features.
-
+In 'passwords.txt', I added 25 different passwords of varying strengths and features so I can ensure all of my code works properly. 
 
 
