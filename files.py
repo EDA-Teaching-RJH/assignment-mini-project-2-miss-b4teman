@@ -23,6 +23,7 @@ def writeResults(filePath, results):
             "Guess time (Years)",
             "Entropy score (Bits)",
             "Suggestions"
+            "Breach count"
         ])
 
         for r in results:

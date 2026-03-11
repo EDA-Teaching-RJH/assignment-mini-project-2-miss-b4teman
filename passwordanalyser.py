@@ -1,10 +1,13 @@
 #ANalysing the passwords
 
+#Importing modules needed
 import re
-import random
-import string
 import math
 import matplotlib.pyplot as plt
+import hashlib 
+import requests
+
+
 
 #Class for analysing password length
 class Password:
@@ -152,6 +155,38 @@ class PasswordAnalyser(Password):
         return round(entropy, 2)
 
     #26 is because there are 26 letters A-Z, 10 is because there are 10 digits, and 32 is because there are 32 special characters
+
+    #attempting to check if password appears in data breaches
+    def checkBreach(self):
+        #sha 1 hash of the passwords, i.e 'k anonimity', upper() because the haveibeenpwned API hashes are uppercase
+        sha1Password = hashlib.sha1(self.password.encode()).hexdigest().upper()
+
+        prefix = sha1Password[:5]
+        suffix = sha1Password[5:]
+
+        url = f"https://api.pwnedpasswords.com/range/{prefix}"
+
+        try:
+            response = requests.get(url)
+            if response.status_code != 200:
+                print("Error")
+                return -1
+            
+            hashes = (line.split(":") for line in response.text.splitlines())
+
+            for h, count in hashes:
+                if h == suffix:
+                    return int(count) #password was found in databreach
+                
+            return 0 #password wasnt found
+        
+        except Exception as e:
+            print("ERROR: API:", e)
+            return -1
+
+
+
+
 
 #matplotlib visualisation:
 def plotEntropyDistro(passwords):

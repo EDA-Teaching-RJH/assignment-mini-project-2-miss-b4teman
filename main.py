@@ -12,6 +12,12 @@ results = []
 for p in passwords:
     analyser = PasswordAnalyser(p)
 
+    breachCount = analyser.checkBreach()
+    if breachCount > 0:
+        analyser.score = lambda: 0
+        analyser.rating = lambda: "Compromised"
+        #lambda is used to temporarily override the score and rating because i think if its in a breach, the score should be 0
+
     results.append([
         p,
         analyser.score(),
@@ -19,7 +25,8 @@ for p in passwords:
         analyser.stars(),
         analyser.guessTime(),
         analyser.entropy(),
-        analyser.suggestions()
+        analyser.suggestions(),
+        breachCount #no analyser. because of lambda
     ])
 
 writeResults("results.csv", results)
@@ -42,3 +49,9 @@ print(f"Guess time (years): {p.guessTime()}")
 print(f"Entropy: {p.entropy()}")
 print(f"Suggestions: {p.suggestions()}")
 
+if breachCount == 0:
+    print("Password not found in any breaches :D")
+elif breachCount > 0:
+    print(f"This password has appeared {breachCount} times in breaches.. Change it.")
+else:
+    print("ERROR")
