@@ -17,31 +17,31 @@ class Password:
     def length(self):
         return len(self.password)
 
-#Adding inheritance: inherting from password
+#Adding inheritance: inherting from Password and contains all code for analysing the passwords
 class PasswordAnalyser(Password):
 
 #Regular expression: importing the library (do that at the top) and checking the passwords for different features
 
     def uppercase(self):
-        return bool(re.search(r"[A-Z]", self.password))
+        return bool(re.search(r"[A-Z]", self.password)) #checking for uppercase
 
     def lowercase(self):
-        return bool(re.search(r"[a-z]", self.password))
+        return bool(re.search(r"[a-z]", self.password)) #checking for lowercase
 
     def numbers(self):
-        return bool(re.search(r"\d", self.password))
+        return bool(re.search(r"\d", self.password)) #checking for numbers
 
     def specialCharacters(self):
-        return bool(re.search(r"[^\w\s]", self.password))
+        return bool(re.search(r"[^\w\s]", self.password)) #checking for special characters
 
     def repeatedCharacters(self):
-        return bool(re.search(r"(.)\1{2,}",self.password))
+        return bool(re.search(r"(.)\1{2,}",self.password)) #checking for repeated characters
 
     def commonPassword(self):
         with open("commonpasswords.txt") as f:
             common = f.read().splitlines()
         
-        return self.password.lower() in common
+        return self.password.lower() in common  #I have a file for common passwords, and this checks if a password is in it
 
 #scoring passwords + giving rating
     def score(self):
@@ -122,8 +122,6 @@ class PasswordAnalyser(Password):
 
         return round(years, 2)
     
-    #for reflection MD this was definitely the hardest part
-
     def stars(self):
         score = self.score()
 
@@ -132,7 +130,7 @@ class PasswordAnalyser(Password):
 
         return givenStars + missing
 
-    def entropy(self):
+    def entropy(self): #calculating entropy: using the formula for entropy, it estimates the passwords randomness in bits
 
         pool = 0
 
@@ -188,7 +186,7 @@ class PasswordAnalyser(Password):
 
 
 
-#matplotlib visualisation:
+#matplotlib visualisation: creates a graph showing the distribution of entropy scores across my passwords
 def plotEntropyDistro(passwords):
     entropies = []
 

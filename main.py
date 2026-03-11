@@ -41,6 +41,8 @@ from passwordanalyser import PasswordAnalyser
 password = input("Enter a password to check: ")
 p = PasswordAnalyser(password)
 
+breachCount = p.checkBreach()
+
 print(f"Password: {password}")
 print(f"Score: {p.score()}")
 print(f"Rating: {p.rating()}")
