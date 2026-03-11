@@ -4,6 +4,7 @@ import re
 import random
 import string
 import math
+import matplotlib.pyplot as plt
 
 #Class for analysing password length
 class Password:
@@ -151,3 +152,25 @@ class PasswordAnalyser(Password):
         return round(entropy, 2)
 
     #26 is because there are 26 letters A-Z, 10 is because there are 10 digits, and 32 is because there are 32 special characters
+
+#matplotlib visualisation:
+def plotEntropyDistro(passwords):
+    entropies = []
+
+    for pw in passwords:
+        analyser = PasswordAnalyser(pw)
+        entropies.append(analyser.entropy())
+
+    plt.figure(figsize=(8,5))
+
+    plt.hist(entropies, bins = 10, color = "#f45cff", edgecolor = "#11004a")
+    
+    plt.title("Entropy Score Distribution")
+    plt.xlabel("Entropy Score")
+    plt.ylabel("No. of Passwords")
+
+    plt.grid(axis = "y", linestyle = "dashed", alpha = 1)
+
+    plt.tight_layout()
+    plt.savefig("Entropy Distribution.png")
+    plt.show()

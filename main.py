@@ -3,6 +3,7 @@
 #Importing and reading passwords
 from files import readPasswords, writeResults
 from passwordanalyser import PasswordAnalyser
+from passwordanalyser import plotEntropyDistro
 
 passwords = readPasswords("Passwords.txt")
 
@@ -23,6 +24,7 @@ for p in passwords:
 
 writeResults("results.csv", results)
 print("All Passwords Analysed")
+plotEntropyDistro(passwords)
 
 #Here the main function brings everything together
 
