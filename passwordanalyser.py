@@ -4,6 +4,7 @@
 import re
 import math
 import matplotlib.pyplot as plt
+#to run this code, dont press play
 import hashlib 
 import requests
 
@@ -207,3 +208,5 @@ def plotEntropyDistro(passwords):
     plt.tight_layout()
     plt.savefig("Entropy Distribution.png")
     plt.show()
+
+    #read comments get rid of code and know what s ogingo n 
