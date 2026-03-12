@@ -188,9 +188,6 @@ class PasswordAnalyser(Password):
             return -1
 
 
-
-
-
 #matplotlib visualisation: creates a graph showing the distribution of entropy scores across my passwords
 def plotEntropyDistro(passwords):
     entropies = []
