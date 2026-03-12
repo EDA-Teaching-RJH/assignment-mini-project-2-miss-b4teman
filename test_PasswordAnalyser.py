@@ -1,8 +1,11 @@
-#testing to test diff other passwords
+#testing to test if my code runs properly:
+#to test: enter 'pytest -v' in the terminal
+
+#importing needed modules/libraries
 import pytest
 from passwordanalyser import PasswordAnalyser
 
-#testing diff features:
+#testing diff features: i.e, testing the length and asserting the correct result as if it's wrong the test will fail
 def test_Length():
     p = PasswordAnalyser("HelloTest!!!!")
     assert p.length() == 13
@@ -23,7 +26,7 @@ def test_Special():
     p = PasswordAnalyser("Test:P")
     assert p.specialCharacters() == True
 
-#regex edge cases:
+#regex testing for edge cases:
 def test_NoNumber():
     p = PasswordAnalyser("Test")
     assert p.numbers() == False
@@ -36,7 +39,7 @@ def test_Repeated():
     p = PasswordAnalyser("hhh111222")
     assert p.repeatedCharacters() == True
 
-#score tets:
+#testing the scores for different strengths of passwords
 def test_Weak():
     p = PasswordAnalyser("password")
     assert p.score() == 0

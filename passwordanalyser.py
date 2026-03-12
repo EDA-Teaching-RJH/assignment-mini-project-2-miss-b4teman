@@ -1,12 +1,11 @@
-#ANalysing the passwords
+#Analysing the passwords
 
-#Importing modules needed
-import re
-import math
-import matplotlib.pyplot as plt
-#to run this code, dont press play
-import hashlib 
-import requests
+#Importing external libraries needed, these are built into python so you don't have to install them
+import re #this is for REGEX
+import math #this is for the math needed to calculate entropy
+import matplotlib.pyplot as plt #this is to plot the graph for entropy
+import hashlib #this is to hash the passwords to compare it to the hashes in haveibeenpwned
+import requests #this for detecting passwords in breaches, using the internet
 
 
 
@@ -18,7 +17,7 @@ class Password:
     def length(self):
         return len(self.password)
 
-#Adding inheritance: inherting from Password and contains all code for analysing the passwords
+#Adding inheritance: inherting from Password, the length of passwords, and this child class contains all code for analysing the passwords
 class PasswordAnalyser(Password):
 
 #Regular expression: importing the library (do that at the top) and checking the passwords for different features
@@ -42,9 +41,9 @@ class PasswordAnalyser(Password):
         with open("commonpasswords.txt") as f:
             common = f.read().splitlines()
         
-        return self.password.lower() in common  #I have a file for common passwords, and this checks if a password is in it
+        return self.password.lower() in common  #I have a file for common passwords, and this function checks if a password is in it
 
-#scoring passwords + giving rating
+#function for scoring passwords + changing the score based on the different criteria
     def score(self):
         score = 0
  
@@ -71,6 +70,7 @@ class PasswordAnalyser(Password):
 
         return score
 
+    #function to give a different rating to the passwords based on it's score
     def rating(self):
         rate = self.score()
 
@@ -89,7 +89,7 @@ class PasswordAnalyser(Password):
         else:
             return "ERROR"
 
-#Suggestions for password, tips is empty, but if it doesnt fit a criteria it will add the related suggestion
+#Suggestions for password, tips is empty, but if it doesnt fit a criteria it will append the list with the related suggestion
     def suggestions(self):
     
         tips = []
@@ -112,8 +112,9 @@ class PasswordAnalyser(Password):
         if self.repeatedCharacters():
             tips.append("Remove repeated characters")
 
-        return ", ".join(tips)
+        return ", ".join(tips) #putting all the tips for the specific password together and seperating each suggestion with a comma
 
+    #function for guessing the time to crack password based on the entropy score
     def guessTime(self):
         entropy = self.entropy()
         guesses = 2 ** entropy
@@ -121,8 +122,9 @@ class PasswordAnalyser(Password):
         seconds = guesses / guessesPerSecond
         years = seconds / (60 * 60 * 24 * 365)
 
-        return round(years, 2)
+        return round(years, 2) #rounding the score so it looks better. also done in years as seconds were very big numbers
     
+    #function to show stars based on score, i.e a score of 4 gets 4 stars
     def stars(self):
         score = self.score()
 
@@ -133,7 +135,7 @@ class PasswordAnalyser(Password):
 
     def entropy(self): #calculating entropy: using the formula for entropy, it estimates the passwords randomness in bits
 
-        pool = 0
+        pool = 0  #the pool is the possible characters in the password, each feature adds to it
 
         if self.lowercase():
             pool += 26
@@ -152,23 +154,25 @@ class PasswordAnalyser(Password):
 
         entropy = self.length() * math.log2(pool)
         return round(entropy, 2)
-
-    #26 is because there are 26 letters A-Z, 10 is because there are 10 digits, and 32 is because there are 32 special characters
+        #26 is because there are 26 letters A-Z (both uppercase and lowercase), 10 is because there are 10 digits, and 32 is because there are 32 special characters
 
     #attempting to check if password appears in data breaches
     def checkBreach(self):
         #sha 1 hash of the passwords, i.e 'k anonimity', upper() because the haveibeenpwned API hashes are uppercase
         sha1Password = hashlib.sha1(self.password.encode()).hexdigest().upper()
 
+        #getting the first 5 characters for the hash of each password, and the last 5
         prefix = sha1Password[:5]
         suffix = sha1Password[5:]
 
-        url = f"https://api.pwnedpasswords.com/range/{prefix}"
+        url = f"https://api.pwnedpasswords.com/range/{prefix}" #the API link
 
+
+        #searching to see if any of the hashes match the database from haveibeenpwned, and returning an error if i cant connect to the API
         try:
             response = requests.get(url)
             if response.status_code != 200:
-                print("Error")
+                print("Error connecting to API")
                 return -1
             
             hashes = (line.split(":") for line in response.text.splitlines())
@@ -177,7 +181,7 @@ class PasswordAnalyser(Password):
                 if h == suffix:
                     return int(count) #password was found in databreach
                 
-            return 0 #password wasnt found
+            return 0 #password wasnt found in the breach
         
         except Exception as e:
             print("ERROR: API:", e)
@@ -208,5 +212,3 @@ def plotEntropyDistro(passwords):
     plt.tight_layout()
     plt.savefig("Entropy Distribution.png")
     plt.show()
-
-    #read comments get rid of code and know what s ogingo n 
